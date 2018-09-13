@@ -1,2 +1,2 @@
 # foodorder
-a SPA based on react + nodejs + mangodb  yes
+a SPA based on react + nodejs + mangodb  
