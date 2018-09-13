@@ -4,7 +4,7 @@ const ChatListItem = ({ messageObj, userId }) => {
   const isMine = messageObj.get("from") === userId;
   return (
     <div className={isMine ? "chat-list-item reverse" : "chat-list-item"}>
-      <div className="circle">{isMine ? "我" : "对方"}</div>
+      <div className="circle">{isMine ? "me" : "deliveryman"}</div>
       <p className="message">{messageObj.get("message")}</p>
     </div>
   );

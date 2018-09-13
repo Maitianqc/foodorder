@@ -19,27 +19,27 @@ const Chat = asyncComponent(() => import("./chat.jsx"));
 
 const list = [
   {
-    title: "订单",
+    title: "Order",
     path: "/allOrders",
     type: "customer", // 代表 customer 不需要显示订单页面
     component: AllOrders,
     imgName: "order"
   },
   {
-    title: "商品",
+    title: "Menu",
     path: "/goods",
     type: "deliver",
     component: Goods,
     imgName: "goods"
   },
   {
-    title: "消息",
+    title: "Message",
     path: "/messageList",
     component: Message,
     imgName: "message"
   },
   {
-    title: "我的",
+    title: "Mine",
     path: "/me",
     component: My,
     imgName: "user"

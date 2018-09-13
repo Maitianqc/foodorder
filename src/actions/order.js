@@ -32,7 +32,7 @@ export function getOrder(orderId) {
       const res = await axios.post("/order/getOrder", { orderId });
       if (res.status === 200 && res.data.code === 0) {
         history.push("/me/orders");
-        Toast.success("接单成功", 1);
+        Toast.success("accept the order", 1);
       }
     } catch (error) {
       console.log(error)
@@ -45,7 +45,7 @@ export function affirmOrder(orderId) {
     try {
       const res = await axios.post("/order/affirm", { orderId });
       if (res.status === 200 && res.data.code === 0) {
-        Toast.success("确认订单成功", 1);
+        Toast.success("confirm the order", 1);
         dispatch(affirmOrderSuccess(orderId));
       }
     } catch (error) {

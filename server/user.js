@@ -9,12 +9,12 @@ module.exports = function(app) {
     const { user, pwd, type } = req.body;
     User.findOne({ user }, function(e, doc) {
       if (doc) {
-        return res.status(200).json({ code: 1, msg: "已存在该用户" });
+        return res.status(200).json({ code: 1, msg: "the user is already exist" });
       }
       const model = new User({ user, pwd, type });
       model.save(function(error, doc) {
         if (error || !doc) {
-          return res.status(500).json({ msg: "后端出错" });
+          return res.status(500).json({ msg: "error in server" });
         }
         const { user, type, _id } = doc;
         // 保持登录状态7天
@@ -30,10 +30,10 @@ module.exports = function(app) {
     const { user, pwd } = req.body;
     User.findOne({ user, pwd }, { pwd: 0 }, function(e, doc) {
       if (!doc) {
-        return res.status(200).json({ code: 1, msg: "用户名或密码错误" });
+        return res.status(200).json({ code: 1, msg: "username or password is wrong" });
       }
       if (e) {
-        return res.status(500).json({ msg: "后端出错" });
+        return res.status(500).json({ msg: "error in server" });
       }
       const { user, type, _id } = doc;
       const token = jwt.sign({ id: _id }, key, {
@@ -47,10 +47,10 @@ module.exports = function(app) {
     const { id } = req.decoded;
     User.findOne({ _id: id }, function(e, user) {
       if (!user) {
-        return res.status(401).json({ msg: "token 失效" });
+        return res.status(401).json({ msg: "token wrong" });
       }
       if (e) {
-        return res.status(500).json({ msg: "后端出错" });
+        return res.status(500).json({ msg: "error in server" });
       }
       return res.json({
         code: 0,
@@ -70,10 +70,10 @@ module.exports = function(app) {
       .populate({ path: "orders", options: { sort: { date: -1 } } })
       .exec(function(error, user) {
         if (error) {
-          return res.status(500).json({ msg: "后端出错" });
+          return res.status(500).json({ msg: "error in server" });
         }
         if (!user) {
-          return res.status(200).json({ code: 1, errorMsg: "找不到该用户" });
+          return res.status(200).json({ code: 1, errorMsg: "can not fond the user" });
         }
 
         return res.status(200).json({ code: 0, data: user.orders });

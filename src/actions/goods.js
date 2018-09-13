@@ -43,7 +43,7 @@ export function buy() {
           .toJS()
       });
       if (res.status === 200 && res.data.code === 0) {
-        Toast.success("购买成功", 1);
+        Toast.success("purchase success", 1);
         dispatch({ type: BUY_SUCCESS });
       }
     } catch (error) {

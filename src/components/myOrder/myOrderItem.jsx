@@ -12,13 +12,13 @@ const Item = ({ item, type, handleGetOrder, affirmOrder, chat, id }) => {
   // 设置订单状态文字
   switch (state) {
     case 0:
-      stateText = "等待接单";
+      stateText = "Waiting for order";
       break;
     case 1:
-      stateText = "正在派送";
+      stateText = "Delivering";
       break;
     case 2:
-      stateText = "订单已完成";
+      stateText = "Compelete";
       break;
     default:
       break;
@@ -38,7 +38,7 @@ const Item = ({ item, type, handleGetOrder, affirmOrder, chat, id }) => {
           style={{ marginLeft: "8px" }}
           onClick={() => handleGetOrder(orderId)}
         >
-          接单
+          accept order
         </Button>
       </div>
     );
@@ -54,7 +54,7 @@ const Item = ({ item, type, handleGetOrder, affirmOrder, chat, id }) => {
             chat(customerId === id ? item.get("deliver") : customerId)
           }
         >
-          联系对方
+          contact
         </Button>
         <Button
           type="ghost"
@@ -63,7 +63,7 @@ const Item = ({ item, type, handleGetOrder, affirmOrder, chat, id }) => {
           style={{ marginLeft: "8px" }}
           onClick={() => affirmOrder(orderId)}
         >
-          确认送达
+          delivered confirm
         </Button>
       </div>
     );
@@ -74,7 +74,7 @@ const Item = ({ item, type, handleGetOrder, affirmOrder, chat, id }) => {
 
   return (
     <Card className="list-item">
-      <Card.Header title="YCK 的店" extra={<span>{stateText}</span>} />
+      <Card.Header title="autumn shop" extra={<span>{stateText}</span>} />
       <Card.Body>
         <div className="card-body">
           <div>{item.get("desc") + countDesc}</div>

@@ -21,7 +21,7 @@ class MyOrder extends React.Component {
     const { history, affirmOrder, user } = this.props;
     return (
       <div>
-        <NavBar title="我的订单" backClick={history.goBack} />
+        <NavBar title="My Orders" backClick={history.goBack} />
         <div style={{ marginTop: "60px" }}>
           {user
             .get("orders")

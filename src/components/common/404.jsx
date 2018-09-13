@@ -8,15 +8,15 @@ class NotFound extends React.Component {
   render() {
     return (
       <div>
-        <Nav title="找不到该页面" hasIcon={false} />
+        <Nav title="can not find the page" hasIcon={false} />
         <div className="center">
-          抱歉，找不到该页面!
+       sorry!  can not find the page!
           <Button
             type="primary"
             size="small"
             onClick={() => this.props.history.push("/")}
           >
-            回到首页
+            back to the first page
           </Button>
         </div>
       </div>

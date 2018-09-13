@@ -14,10 +14,10 @@ const RegisterForm = ({ register, radioData, handleTextChange, type }) => (
     <WingBlank>
       <List>
         <InputItem onChange={v => handleTextChange("user", v)}>
-          用户名
+          username
         </InputItem>
         <WhiteSpace />
-        <InputItem onChange={v => handleTextChange("pwd", v)}>密码</InputItem>
+        <InputItem onChange={v => handleTextChange("pwd", v)}>password</InputItem>
         <WhiteSpace />
         {radioData.map(i => (
           <Radio.RadioItem
@@ -31,7 +31,7 @@ const RegisterForm = ({ register, radioData, handleTextChange, type }) => (
       </List>
       <WhiteSpace />
       <Button type="primary" onClick={register}>
-        注册
+        sign up
       </Button>
     </WingBlank>
   </div>

@@ -33,7 +33,7 @@ const GoodsList = ({ goodsList, addToCart, shopCart }) => {
             />
           }
         >
-          {v.get("name")} <Brief>¥{v.get("price")}</Brief>
+          {v.get("name")} <Brief>${v.get("price")}</Brief>
         </Item>
       ))}
     </List>

@@ -7,22 +7,22 @@ const LoginForm = ({ login, push, handleTextChange }) => (
     <WingBlank>
       <List>
         <InputItem onChange={v => handleTextChange("user", v)}>
-          用户名
+          username
         </InputItem>
         <WhiteSpace />
         <InputItem onChange={v => handleTextChange("pwd", v)}>密码</InputItem>
       </List>
       <WhiteSpace />
       <Button type="primary" onClick={login}>
-        登录
+        login
       </Button>
       <WhiteSpace />
       <div className="button-wrapper">
         <Button inline size="small" style={{ width: "100px" }} onClick={push}>
-          注册
+          sign up
         </Button>
         <Button inline size="small" style={{ width: "100px" }}>
-          忘记密码
+          forgot passowrd
         </Button>
       </div>
     </WingBlank>

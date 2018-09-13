@@ -36,7 +36,7 @@ module.exports = function(app) {
     const model = new AllOrders(order);
     model.save(function(error, data) {
       if (error || !data) {
-        return res.status(500).json({ msg: "后端出错" });
+        return res.status(500).json({ msg: "error in server" });
       }
 
       User.update(
@@ -48,10 +48,10 @@ module.exports = function(app) {
         },
         function(e, user) {
           if (e || !user) {
-            return res.status(500).json({ msg: "后端出错" });
+            return res.status(500).json({ msg: "error in server" });
           }
 
-          return res.status(200).json({ code: 0, msg: "购买成功" });
+          return res.status(200).json({ code: 0, msg: "purchase success" });
         }
       );
     });

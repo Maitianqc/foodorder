@@ -78,11 +78,11 @@ class Chat extends React.Component {
         <div className="bottom-input">
           <List style={{ width: "100%" }}>
             <InputItem
-              placeholder="请输入信息"
+              placeholder="enter your message"
               autoFocus={true}
               value={this.state.value}
               onChange={value => this.setState({ value })}
-              extra={<span>发送</span>}
+              extra={<span>send</span>}
               onExtraClick={this.handleSubmit}
             />
           </List>
